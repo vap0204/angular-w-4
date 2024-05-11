@@ -10,6 +10,9 @@ type LightColor = 'red' | 'yellow' | 'green';
       <div class="light yellow" [class.active]="currentLight === 'yellow'"></div>
       <div class="light green" [class.active]="currentLight === 'green'"></div>
     </div>
+    <button [disabled]="currentLight === 'red'" (click)="handleCrossing()">
+      Пресичане
+    </button>
   `,
   styleUrls: ['./signal-controller.component.scss'],
   standalone: true
@@ -33,5 +36,13 @@ export class SignalControllerComponent {
         this.currentLight = sequence[(index = (index + 1) % sequence.length)];
       }
     }, 1000);
+  }
+
+  handleCrossing() {
+    if (this.currentLight === 'yellow') {
+      alert('Неправилно пресичане!');
+    } else if (this.currentLight === 'green') {
+      console.log('Пресичате правилно.');
+    }
   }
 }

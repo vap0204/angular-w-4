@@ -1,0 +1,27 @@
+.control-panel {
+  display: flex;
+  min-height: 90vh;
+  align-items: center;
+  justify-content: space-around;
+}
+.inline {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+}
+
+button {
+  background: linear-gradient(red, darkred);
+  padding: 1em;
+  font-size: 1.7rem;
+  cursor: pointer;
+  transition: background 250ms ease-in-out;
+}
+button:disabled {
+  background: grey;
+  cursor: auto;
+}
+.inactive {
+  pointer-events: none;
+}
